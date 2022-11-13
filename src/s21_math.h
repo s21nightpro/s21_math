@@ -24,8 +24,7 @@
 #define S21_M_2_SQRTPI 1.12837916709551257390  // Value of 2/sqrt(pi)
 #define S21_M_SQRT2 1.41421356237309504880     // Value of sqrt(2)
 #define S21_M_SQRT1_2 0.70710678118654752440   // Value of 1/sqrt(2)
-#define MAX_LONG_DOUBLE 1.79769313486231571e+308
-#define MAX_DOUBLE 1.79769313486231571e+308
+#define S21_MAX_DOUBLE 1.79769313486231571e+308
 #define S21_EPS 1e-17
 #define S21_INF 1.0 / 0.0
 #define S21_NAN 0.0 / 0.0
@@ -33,17 +32,13 @@
 int s21_abs(int);
 long double s21_acos(double);
 long double s21_asin(double);
-long double s21_atan(double);  // вычисляет арктангенс
-long double s21_ceil(
-    double);  // возвращает ближайшее целое число, не меньшее заданного значения
-long double s21_cos(double);  // вычисляет косинус
-long double s21_exp(
-    double);  // возвращает значение e, возведенное в заданную степень
+long double s21_atan(double);
+long double s21_ceil(double);
+long double s21_cos(double);
+long double s21_exp(double);
 long double s21_fabs(double);
-long double s21_floor(double);  // возвращает ближайшее целое число, не
-                                // превышающее заданное значение
-long double s21_fmod(double,
-                     double);  // остаток операции деления с плавающей точкой
+long double s21_floor(double);
+long double s21_fmod(double, double);
 long double log(double x);  // вычисляет натуральный логарифм
 long double s21_pow(double, double);  // возводит число в заданную степень
 long double s21_sin(double);  // вычисляет синус
