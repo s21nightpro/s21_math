@@ -5,7 +5,7 @@ long double s21_exp(double x) {
   int flag = 0;
   x < 0 ? x = -x, flag = 1: ;
 
-  for (int i = 1; s21_fabs(res) > s21_EPS; i++, res *= x / i, tmp += res) {
+  for (int i = 0; s21_fabs(res) > s21_EPS; i++, res *= x / i, tmp += res) {
     if (tmp > S21_MAX_DOUBLE) {
       tmp = S21_INF;
       break;
