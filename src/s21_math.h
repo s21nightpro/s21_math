@@ -39,7 +39,7 @@ long double s21_exp(double);
 long double s21_fabs(double);
 long double s21_floor(double);
 long double s21_fmod(double, double);
-long double log(double x);
+long double s21_log(double);
 long double s21_pow(double, double);
 long double s21_sin(double);
 long double s21_sqrt(double);

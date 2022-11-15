@@ -3,15 +3,15 @@
 long double s21_log(double x) {
   long double sign = 1, pow = 0, res, tmp;
 
-  x < 0 ? x = -x, sign = -sign: ;
+  x < 0 ? x = -x, sign = -sign: 0 ;
 
   while ((x >= 10) || (x < 1 && x > 0)) {
     if (1 > x && x > 0) {
-      x = x * 10;
-      pow = pow - 1;
+      x *= 10;
+      pow -= 1;
     } else {
-      x = x * 0.1;
-      pow = pow + 1;
+      x *= 0.1;
+      pow += 1;
     }
   }
 
