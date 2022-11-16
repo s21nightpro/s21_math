@@ -3,7 +3,7 @@
 long double s21_log(double x) {
   long double sign = 1, pow = 0, res, tmp;
 
-  x < 0 ? x = -x, sign = -sign: 0 ;
+  x < 0 ? x = -x, sign = -sign : 0;
 
   while ((x >= 10) || (x < 1 && x > 0)) {
     if (1 > x && x > 0) {
