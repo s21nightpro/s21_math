@@ -1,13 +1,18 @@
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
- 
+CFLAGS = -Wall -Werror -Wextra -std=c11
+DLIB = -lcheck
+
+ifeq ($(uname -s), Linux)
+	DLIB += -lsubunit -lm -lpthread -lrt
+endif
+
 all: clean s21_math.a test gcov_report
 
 clean: 
 	rm -rf *.o *.a *.html test
 
 test: s21_math.a
-	$(CC) $(CFLAGS) test.c s21_math.a -lm -o test
+	$(CC) $(CFLAGS) test.c s21_math.a $(DLIB) -o test
 	./test
 	
 s21_math.a:
@@ -15,7 +20,7 @@ s21_math.a:
 	ar rcs s21_math.a s21_*.o
 
 gcov_report: s21_math.a
-	$(CC) $(CFLAGS) --coverage test.c s21_math.a -lm -o gcov_test
+	$(CC) $(CFLAGS) --coverage test.c s21_math.a $(DLIB) -o gcov_test
 	chmod +x gcov_test
 	./gcov_test
 	lcov -t "gcov_test" -o gcov_test.info --no-external -c -d .

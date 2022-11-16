@@ -22,7 +22,7 @@
 int s21_abs(int);
 long double s21_acos(double);
 long double s21_asin(double);
-long double s21_atan(double);
+long double s21_atan(double);  // must be fixed
 long double s21_ceil(double);
 long double s21_cos(double);
 long double s21_exp(double);
@@ -31,7 +31,7 @@ long double s21_floor(double);
 long double s21_fmod(double, double);
 long double s21_log(double);
 long double s21_pow(double, double);
-long double s21_sin(double);
+long double s21_sin(double);  // sin tan cos troubles with inf
 long double s21_sqrt(double);
 long double s21_tan(double);
 
