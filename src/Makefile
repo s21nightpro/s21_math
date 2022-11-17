@@ -1,5 +1,4 @@
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -std=c11
+CC:= gcc -Wall -Werror -Wextra -std=c11
 DLIB = -lcheck
 
 ifeq ($(uname -s), Linux)
@@ -11,16 +10,16 @@ all: clean s21_math.a test gcov_report
 clean: 
 	rm -rf *.o *.a *.html test
 
-test: s21_math.a
-	$(CC) $(CFLAGS) test.c s21_math.a $(DLIB) -o test
+test:
+	$(CC) test.c s21_*.c $(DLIB) -o test
 	./test
 	
 s21_math.a:
-	$(CC) $(CFLAGS) s21_*.c
+	$(CC) -c s21_*.c
 	ar rcs s21_math.a s21_*.o
 
 gcov_report: s21_math.a
-	$(CC) $(CFLAGS) --coverage test.c s21_math.a $(DLIB) -o gcov_test
+	$(CC) --coverage test.c s21_math.a $(DLIB) -o gcov_test
 	chmod +x gcov_test
 	./gcov_test
 	lcov -t "gcov_test" -o gcov_test.info --no-external -c -d .
