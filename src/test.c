@@ -67,16 +67,14 @@ START_TEST(exp_tests) {
   ck_assert_float_eq(exp(1000), s21_exp(1000));
   ck_assert_float_eq(exp(1), s21_exp(1));
   ck_assert_float_eq(exp(2), s21_exp(2));
-  // ck_assert_double_eq(exp(100), s21_exp(100));  // inf?
   ck_assert_float_eq(exp(-1), s21_exp(-1));
   ck_assert_float_eq(exp(0), s21_exp(0));
-  ck_assert_int_eq(exp(S21_NAN), s21_exp(S21_NAN));  // nan!
+  ck_assert_int_eq(exp(S21_NAN), s21_exp(S21_NAN));
   ck_assert_float_eq(exp(710), s21_exp(710));
   ck_assert_float_eq(exp(1.2345), s21_exp(1.2345));
   ck_assert_float_eq(exp(1.23454656768), s21_exp(1.23454656768));
   ck_assert_float_eq(exp(S21_MAX_DOUBLE), s21_exp(S21_MAX_DOUBLE));
   ck_assert_float_eq(exp(S21_MAX_DOUBLE), s21_exp(S21_MAX_DOUBLE));
-  // ck_assert_double_eq(exp(102.0000002), s21_exp(102.0000002)); // inf?
 }
 END_TEST
 
@@ -123,7 +121,6 @@ START_TEST(sqrt_tests) {
   ck_assert_float_eq(sqrt(6.28), s21_sqrt(6.28));
   ck_assert_float_eq(sqrt(2.2343), s21_sqrt(2.2343));
   ck_assert_int_eq(sqrt(-123), s21_sqrt(-123));
-  // ck_assert_float_eq(sqrt(0.9), s21_sqrt(0.9));  // problem!!
 }
 
 START_TEST(log_tests) {

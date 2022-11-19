@@ -8,7 +8,7 @@ endif
 all: clean s21_math.a test gcov_report
 
 clean: 
-	rm -rf *.a *.out *.o report *.gc* s21_string.a *.info test gcov*
+	rm -rf *.a *.out *.o report *.gc* *.info test gcov*
 
 test:
 	$(CC) test.c s21_*.c $(DLIB) -o test
@@ -27,8 +27,7 @@ gcov_report: s21_math.a
 	open ./report/index.html
 
 linter:
-	cp ../materials/linters/.clang-format ..
+	cp ../materials/linters/.clang-format ./
 	clang-format -i *.c *.h 
-	clang-format -n *.c *.h 
-	rm -rf ../.clang-format
+	rm -rf .clang-format
 
